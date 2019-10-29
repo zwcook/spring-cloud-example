@@ -1,0 +1,12 @@
+# 配置让当前服务去 配置中心找配置文件 fail-fast 设置客户端优先判断configserver 获取是否正常
+# 找目标资源的方式是 通过拼接spring.application.name和spring.application.profiles.active
+# 到configServer中查找文件 这里拼接后的文件名是  configclient-dev
+spring:
+  application:
+    name: configclient
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://localhost:8762
+      fail-fast: true

@@ -1,0 +1,13 @@
+server:
+  port: 8762
+spring:
+  application:
+    name: nativeconfigServer
+  profiles:
+    # 读取本地的配置，这里还可以配置去git上读取配置
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/shared
